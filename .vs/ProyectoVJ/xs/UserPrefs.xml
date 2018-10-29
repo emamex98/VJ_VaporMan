@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{4C75FCF0-F3E9-834D-FC58-98C2B7E638F2}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creepy.cs">
+    <Files>
+      <File FileName="Assets/Limit.cs" Line="25" Column="6" />
+      <File FileName="Assets/Creepy.cs" Line="15" Column="2" />
+      <File FileName="Assets/EnemyT.cs" Line="53" Column="24" />
+      <File FileName="Assets/Movimiento.cs" Line="38" Column="41" />
+      <File FileName="Assets/Rainbow.cs" Line="11" Column="37" />
+      <File FileName="Assets/Bounds.cs" Line="37" Column="1" />
+      <File FileName="Assets/ufo.cs" Line="18" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

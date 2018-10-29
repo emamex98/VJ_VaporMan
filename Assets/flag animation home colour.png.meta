@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: 841be9027e2164f46bc0dd093057b6b0
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: flag animation home colour_0
+    21300002: flag animation home colour_1
+    21300004: flag animation home colour_2
+    21300006: flag animation home colour_3
+    21300008: flag animation home colour_4
+    21300010: flag animation home colour_5
+    21300012: flag animation home colour_6
+    21300014: flag animation home colour_7
+    21300016: flag animation home colour_8
+    21300018: flag animation home colour_9
+    21300020: flag animation home colour_10
+    21300022: flag animation home colour_11
+    21300024: flag animation home colour_12
+    21300026: flag animation home colour_13
+    21300028: flag animation home colour_14
+    21300030: flag animation home colour_15
+    21300032: flag animation home colour_16
+    21300034: flag animation home colour_17
+    21300036: flag animation home colour_18
+    21300038: flag animation home colour_19
+    21300040: flag animation home colour_20
+    21300042: flag animation home colour_21
+    21300044: flag animation home colour_22
+    21300046: flag animation home colour_23
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 1
+  spritePivot: {x: 0, y: 1}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flag animation home colour_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1157
+        width: 181
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2adb0880c437a492a8d6adc572168045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1157
+        width: 187
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7fadbe199e44ebda34aaee9805062c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_2
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1157
+        width: 188
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae4d5992409f47b793e0483621bb4bb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_3
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1157
+        width: 186
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8181c54de989548f1bca7b77cf7cfd19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_4
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1157
+        width: 184
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf82466757c584aafa28cf46090463cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_5
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1157
+        width: 185
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e382acf186c432b9c0790099332230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_6
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1157
+        width: 183
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c638a93caaf04157a054248fdb21981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_7
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 1157
+        width: 180
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9dbbd678db340b083426c8c17b341f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 713
+        width: 186
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a97b925f1f144c399bc8606c7f5ded
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_9
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 935
+        width: 180
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f07751fb82641c882e9a38707de8e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_10
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 935
+        width: 179
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5b4539a4a0a4eb1b0c4cdf7081472b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_11
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 935
+        width: 185
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba40cf53ace46417bbb5c6946425c9c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_12
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 935
+        width: 185
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b0fa80cca80415d86c2ed2dc76bd71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_13
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 713
+        width: 187
+        height: 443
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73ece6b7d653401498d281fb21848c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_14
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 935
+        width: 185
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6fdb87cbf7842b6a77b6a3c9b47179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_15
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 935
+        width: 185
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5607f030b13545cba9e3d35081768e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_16
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 713
+        width: 184
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865c0b1800eac45139909da2ee259220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_17
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 713
+        width: 184
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c255bc6a7c54fda968266ae447635e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_18
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 713
+        width: 183
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677c4a0f070e1463ba67851eb35179fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_19
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 713
+        width: 183
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c806ea293647840729c61acc8c3c81f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_20
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 712
+        width: 183
+        height: 222
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a824fa182dd884832ba7bb6aa87af319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_21
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 713
+        width: 189
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15ebb6e5857a42e68d06198e4198a1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491
+        width: 189
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b0f861ac24740bfb950a9fced4ce33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation home colour_23
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 491
+        width: 189
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccf46ecdae594b8c82495f6a33c85a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7970a4092bc604a9baa5598e4460650f
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
