@@ -67,6 +67,7 @@ public class Movimiento : MonoBehaviour
         {
             rb.AddForce(transform.up * 30, ForceMode2D.Impulse);
             countJump += 1;
+            print("SpaceBar");
         }
 
         float jActual = Input.GetAxis("Fire1");
@@ -135,51 +136,128 @@ public class Movimiento : MonoBehaviour
     {
         while (true)
         {
-            if (h2 > 0 && v == 0)
+            if (shoot == 0)
             {
-                Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 270));
-                animator.SetTrigger("DisparoDerecha");
+                if (h2 > 0 && v == 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 270));
+                    animator.SetTrigger("DisparoDerecha");
+                }
+                else if (h2 > 0 && v > 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 315));
+                    animator.SetTrigger("DisparoNE");
+                }
+                else if (h2 == 0 && v > 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 0));
+                    animator.SetTrigger("DisparoArriba");
+                }
+                else if (h2 < 0 && v > 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 45));
+                    animator.SetTrigger("DisparoNW");
+                }
+                else if (h2 < 0 && v == 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 90));
+                    animator.SetTrigger("DisparoIzquierda");
+                }
+                else if (h2 < 0 && v < 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 135));
+                    animator.SetTrigger("DisparoSW");
+                }
+                else if (h2 == 0 && v < 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 180));
+                    animator.SetTrigger("DisparoAbajo");
+                }
+                else if (h2 > 0 && v < 0)
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 225));
+                    animator.SetTrigger("DisparoSE");
+                }
+                else
+                {
+                    Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 270));
+                    animator.SetTrigger("DisparoDerecha");
+                }
             }
-            else if (h2 > 0 && v > 0)
+
+            else if (shoot == 1)
             {
+                if (h2 > 0 && v == 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 270));
+                    animator.SetTrigger("DisparoDerecha");
+                }
+                else if (h2 > 0 && v > 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 315));
+                    animator.SetTrigger("DisparoNE");
+                }
+                else if (h2 == 0 && v > 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 0));
+                    animator.SetTrigger("DisparoArriba");
+                }
+                else if (h2 < 0 && v > 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 45));
+                    animator.SetTrigger("DisparoNW");
+                }
+                else if (h2 < 0 && v == 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 90));
+                    animator.SetTrigger("DisparoIzquierda");
+                }
+                else if (h2 < 0 && v < 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 135));
+                    animator.SetTrigger("DisparoSW");
+                }
+                else if (h2 == 0 && v < 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 180));
+                    animator.SetTrigger("DisparoAbajo");
+                }
+                else if (h2 > 0 && v < 0)
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 225));
+                    animator.SetTrigger("DisparoSE");
+                }
+                else
+                {
+                    Instantiate<GameObject>(freeze, bow.position, Quaternion.Euler(0, 0, 270));
+                    animator.SetTrigger("DisparoDerecha");
+                }
+            }
+            if (shoot == 2)
+            {
+
+                Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 270));
+               
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 315));
-                animator.SetTrigger("DisparoNE");
-            }
-            else if (h2 == 0 && v > 0)
-            {
+
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 0));
-                animator.SetTrigger("DisparoArriba");
-            }
-            else if (h2 < 0 && v > 0)
-            {
+
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 45));
-                animator.SetTrigger("DisparoNW");
-            }
-            else if (h2 < 0 && v == 0)
-            {
+
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 90));
-                animator.SetTrigger("DisparoIzquierda");
-            }
-            else if (h2 < 0 && v < 0)
-            {
+
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 135));
-                animator.SetTrigger("DisparoSW");
-            }
-            else if (h2 == 0 && v < 0)
-            {
+
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 180));
-                animator.SetTrigger("DisparoAbajo");
-            }
-            else if (h2 > 0 && v < 0)
-            {
+
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 225));
-                animator.SetTrigger("DisparoSE");
-            }
-            else
-            {
+
                 Instantiate<GameObject>(rain, bow.position, Quaternion.Euler(0, 0, 270));
+
                 animator.SetTrigger("DisparoDerecha");
+
             }
+
             yield return new WaitForSeconds(.5f);
         }
 

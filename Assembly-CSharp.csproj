@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{27094BFF-246B-C4DD-B06D-08E1E52B9027}</ProjectGuid>
+    <ProjectGuid>{EA2095EB-0D0D-B288-1C88-AE53EDC62475}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -82,16 +82,16 @@
     <Compile Include="Assets\Simbolo.cs" />
     <Compile Include="Assets\ufo.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/emamex98/Desktop/ProyectoVJ_SP/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/emamex98/Documents/VJ_VaporMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/emamex98/Desktop/ProyectoVJ_SP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/emamex98/Documents/VJ_VaporMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/emamex98/Desktop/ProyectoVJ_SP/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/emamex98/Documents/VJ_VaporMan/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/emamex98/Desktop/ProyectoVJ_SP/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/emamex98/Documents/VJ_VaporMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
