@@ -14,10 +14,11 @@ public class Boss : MonoBehaviour {
     private IEnumerator ie,ie2,ie3;
     private float threshold;
     private int vidaBoss, cont;
-
+    private bool noLoss;
     
 	// Use this for initialization
 	void Start () {
+        noLoss = true;
         vidaBoss = 10;
         player = GameObject.Find("womba");
         idle = new Estado("idle", typeof(Idle));
@@ -71,7 +72,10 @@ public class Boss : MonoBehaviour {
     {
         if(collision.gameObject.layer == 10)
         {
-            vidaBoss--;
+            if (!noLoss)
+            {
+                vidaBoss--;
+            }
         }
     }
 
@@ -83,7 +87,7 @@ public class Boss : MonoBehaviour {
             float d = Vector2.Distance(transform.position, player.transform.position);
             if (d < threshold && cont == 0)
             {
-               
+                noLoss = false;
                 Transitar(seePlayer);
                 cont++;
             }

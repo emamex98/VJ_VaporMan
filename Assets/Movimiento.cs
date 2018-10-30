@@ -20,7 +20,8 @@ public class Movimiento : MonoBehaviour
 
     private Animator animator;
     private AudioSource audioData;
-    private float threshold;
+    public float threshold;
+    private bool rappeling;
     //private int cont;
 
     // Use this for initialization
@@ -37,7 +38,8 @@ public class Movimiento : MonoBehaviour
         StartCoroutine(ieRappel);
         vidas = 3;
         shoot = 0;
-        threshold = 0.5f;
+        //threshold = 0.4f;
+        rappeling = false;
         //cont = 0;
     }
 
@@ -51,7 +53,10 @@ public class Movimiento : MonoBehaviour
         v = Input.GetAxis("Vertical");
         h2 = Input.GetAxis("Horizontal2");
 
-        transform.Translate(h * Time.deltaTime * 6, 0, 0, Space.World);
+        if(!rappeling){
+            transform.Translate(h * Time.deltaTime * 6, 0, 0, Space.World);
+        }
+       
 
         if (h > 0)
         {
@@ -66,7 +71,7 @@ public class Movimiento : MonoBehaviour
             animator.SetTrigger("RegresaIdle");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && countJump == 0)
+        if (Input.GetKeyDown(KeyCode.Space) && countJump == 0 && !rappeling)
         {
             rb.AddForce(transform.up * 30, ForceMode2D.Impulse);
             countJump += 1;
@@ -105,7 +110,7 @@ public class Movimiento : MonoBehaviour
         Vector2 contactPoint = collision.contacts[0].point;
         Vector2 center = collider.bounds.center;
 
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 20)
         {
             countJump = 0;
         }
