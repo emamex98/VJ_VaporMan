@@ -11,6 +11,9 @@ public class EnemyT : MonoBehaviour {
     private int current;
     private Coroutine c;
     private IEnumerator ie;
+    private IEnumerator ie2;
+    private Coroutine c2;
+    private bool frozen;
 
     private bool visible = false;
 
@@ -20,12 +23,14 @@ public class EnemyT : MonoBehaviour {
         current = 0;
         ie = verificarDistancia();
         c = StartCoroutine(ie);
-	}
+        ie2 = froze();
+        frozen = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if(visible){
+        if(visible && frozen ==false){
             transform.position = Vector2.MoveTowards(transform.position,
                path[current].transform.position,
                5 * Time.deltaTime);
@@ -51,5 +56,26 @@ public class EnemyT : MonoBehaviour {
     private void OnBecameVisible()
     {
         visible = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 15 && frozen == false)
+        {
+
+            StartCoroutine(ie2);
+            frozen = true;
+        }
+    }
+
+    IEnumerator froze()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(4.0f);
+            print("hola");
+            frozen = false;
+            StopCoroutine("froze");
+        }
     }
 }
