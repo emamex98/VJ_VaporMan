@@ -33,11 +33,14 @@ public class Rappel : MonoBehaviour {
     {
         if (collision.gameObject.layer == 20)
         {
-            puntoRappel = collision.transform.position;
+            ContactPoint2D contact = collision.contacts[0];
+            puntoRappel = contact.point;
+            puntoRappel.y += 2.8f;
             rappelCont = true;
         }
         Movimiento.rappelExist = false;
         Destroy(gameObject);
 
     }
+
 }

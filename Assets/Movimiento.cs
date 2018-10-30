@@ -20,6 +20,8 @@ public class Movimiento : MonoBehaviour
 
     private Animator animator;
     private AudioSource audioData;
+    private float threshold;
+    //private int cont;
 
     // Use this for initialization
     void Start()
@@ -35,7 +37,8 @@ public class Movimiento : MonoBehaviour
         StartCoroutine(ieRappel);
         vidas = 3;
         shoot = 0;
-
+        threshold = 0.5f;
+        //cont = 0;
     }
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class Movimiento : MonoBehaviour
         }
 
         float jActual = Input.GetAxis("Fire1");
+
         if (j == 0 && jActual == 1)
         {
             StartCoroutine(coroutine);
@@ -80,11 +84,19 @@ public class Movimiento : MonoBehaviour
             StopCoroutine(coroutine);
             animator.SetTrigger("StopDisparos");
         }
+
         j = jActual;
+
         if (!rappelExist && Input.GetKeyDown(KeyCode.Z))
         {
             Instantiate<GameObject>(rappel, bow.position, bow.rotation);
             rappelExist = true;
+        }
+
+        if (Rappel.rappelCont == true)
+        {
+            transform.position = Vector2.Lerp(transform.position, Rappel.puntoRappel, 13 * Time.deltaTime / Vector2.Distance(transform.position, Rappel.puntoRappel));
+            //cont = 1;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -275,18 +287,18 @@ public class Movimiento : MonoBehaviour
        shoot = 0;
    }
 
-   IEnumerator rappelMove() 
-   { 
-       while (true) 
-       { 
-           yield return new WaitForSeconds(0.1f);
-           if (Rappel.rappelCont == true)
-           {
-               transform.position = Vector2.Lerp(transform.position, Rappel.puntoRappel, 1.0f);
-               Rappel.rappelCont = false;
- 
-           }
-       }
-   }
+    IEnumerator rappelMove()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            float d = Vector2.Distance(transform.position, Rappel.puntoRappel);
+            if (d < threshold)
+            {
+                Rappel.rappelCont = false;
+                //cont = 0;
+            }
+        }
+    }
 
 }
