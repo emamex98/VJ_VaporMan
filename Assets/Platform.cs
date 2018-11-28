@@ -17,7 +17,7 @@ public class Platform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(cambiar*Time.deltaTime * 6, 0, 0, Space.World);
+        transform.Translate(cambiar * Time.deltaTime * 6, 0, 0, Space.World);
 
 	}
 

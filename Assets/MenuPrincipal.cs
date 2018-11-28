@@ -7,11 +7,11 @@ public class MenuPrincipal : MonoBehaviour {
 
     public Camera cam;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+    // Use this for initialization
+    void Start()
+    {
+
+    }
 	// Update is called once per frame
 	void Update () {
 
@@ -19,8 +19,6 @@ public class MenuPrincipal : MonoBehaviour {
         {
             SceneManager.LoadScene("SampleScene");
         }
-
-
     }
 
 }

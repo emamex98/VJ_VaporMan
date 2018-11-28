@@ -11,15 +11,18 @@ public class Boss : MonoBehaviour {
     private Simbolo seePlayer, lowLife, noLife;
     private Estado actual, anterior;
     private Component scriptActual;
-    private IEnumerator ie,ie2,ie3;
-    private float threshold;
-    private int vidaBoss, cont;
-    private bool noLoss;
+    private IEnumerator ie,ie2,ie3, jump;
+    private float threshold, velocidad, dir;
+    private int vidaBoss, cont, noSalto;
+    private bool noLoss, ground;
+    private Rigidbody2D rb;
     
 	// Use this for initialization
 	void Start () {
         noLoss = true;
+        ground = false;
         vidaBoss = 10;
+        noSalto = 0;
         player = GameObject.Find("womba");
         idle = new Estado("idle", typeof(Idle));
         attack = new Estado("attack", typeof(Attack));
@@ -44,10 +47,14 @@ public class Boss : MonoBehaviour {
         ie = checarDistancia();
         ie2 = checarVida();
         ie3 = disparar();
+        jump = salta();
         StartCoroutine(ie);
         StartCoroutine(ie2);
         StartCoroutine(ie3);
         cont = 0;
+        velocidad = 5;
+        dir = 1;
+        rb = GetComponent<Rigidbody2D>();
         //System.Type tipo = typeof(Idle);
     }
 
@@ -66,6 +73,8 @@ public class Boss : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        transform.Translate(dir * velocidad * Time.deltaTime, 0, 0, Space.World);
+
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -76,6 +85,14 @@ public class Boss : MonoBehaviour {
             {
                 vidaBoss--;
             }
+        }
+        if (collision.gameObject.layer == 18 || collision.gameObject.layer == 23)
+        {
+            dir *= -1;
+        }
+        if (collision.gameObject.layer == 8)
+        {
+            ground = true;
         }
     }
 
@@ -102,10 +119,20 @@ public class Boss : MonoBehaviour {
             if(vidaBoss < 5)
             {
                 Transitar(lowLife);
+                velocidad = 10;
+                //StartCoroutine(jump);
+                yield return new WaitForSeconds(2.0f);
+                if (ground)
+                {
+                    rb.AddForce(transform.up * 25.0f, ForceMode2D.Impulse);
+                    print("salta");
+                    ground = false;
+                }
             }
             if(vidaBoss < 1)
             {
                 Transitar(noLife);
+                //Destroy(pared);
             }
         }
     }
@@ -115,9 +142,23 @@ public class Boss : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(1.0f);
-            if(actual == attack)
+            if(actual == attack || actual == agressive)
             {
                 Instantiate<GameObject>(fire, bossIns.transform.position, bossIns.transform.rotation);
+            }
+        }
+    }
+
+    IEnumerator salta()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2.0f);
+            if (ground)
+            {
+                rb.AddForce(transform.up * 30.0f, ForceMode2D.Impulse);
+                print("salta");
+                ground = false;
             }
         }
     }

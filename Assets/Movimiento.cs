@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Movimiento : MonoBehaviour
 {
 
+    //[SerializeField] private GameObject pausePanel;
     private Rigidbody2D rb;
     private float countJump, h, v, h2;
-    public GameObject rain, freeze, rappel;
+    public GameObject rain, freeze, rappel, goBeyond;
     public Transform bow;
     public Text textito;
     private float j = 0;
-    private IEnumerator coroutine, returnTo, ieRappel;
-    public static bool rappelExist;
+    private IEnumerator coroutine, returnTo, ieRappel, invin, win, damage;
+    public static bool rappelExist, ganaste;
 
     public static int vidas;
     private int shoot;
@@ -21,13 +23,15 @@ public class Movimiento : MonoBehaviour
     private Animator animator;
     private AudioSource audioData;
     public float threshold;
-    private bool rappeling;
+    private bool rappeling, invincible, fall;
     //private int cont;
 
     // Use this for initialization
     void Start()
     {
         rappelExist = false;
+        ganaste = false;
+        fall = false;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioData = GetComponent<AudioSource>();
@@ -35,40 +39,52 @@ public class Movimiento : MonoBehaviour
         coroutine = disparo();
         returnTo = returnToNormal();
         ieRappel = rappelMove();
+        invin = invincibility();
+        win = ganar();
+        damage = fallDamage();
         StartCoroutine(ieRappel);
+        StartCoroutine(win);
+        StartCoroutine(damage);
         vidas = 3;
         shoot = 0;
         //threshold = 0.4f;
         rappeling = false;
+        invincible = false;
+        goBeyond.SetActive(false);
         //cont = 0;
+        //pausePanel.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
         textito.text = ("Vidas :" + vidas);
 
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
         h2 = Input.GetAxis("Horizontal2");
 
-        if(!rappeling){
+        animator.SetFloat("Run",h*5);
+        if(!rappeling && !invincible){
             transform.Translate(h * Time.deltaTime * 6, 0, 0, Space.World);
         }
-       
+        else if(!rappeling && invincible)
+        {
+            transform.Translate(h * Time.deltaTime * 13, 0, 0, Space.World);
+        }
 
         if (h > 0)
         {
-            animator.SetTrigger("CaminarDerecha");
+            //animator.SetTrigger("CaminarDerecha");
         }
         else if (h < 0)
         {
-            animator.SetTrigger("CaminarIzquierda");
+            //animator.SetTrigger("CaminarIzquierda");
         }
         else
         {
-            animator.SetTrigger("RegresaIdle");
+            //animator.SetTrigger("RegresaIdle");
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && countJump == 0 && !rappeling)
@@ -76,6 +92,7 @@ public class Movimiento : MonoBehaviour
             rb.AddForce(transform.up * 30, ForceMode2D.Impulse);
             countJump += 1;
             print("SpaceBar");
+            animator.SetBool("IsJumpingD", true);
         }
 
         float jActual = Input.GetAxis("Fire1");
@@ -103,6 +120,10 @@ public class Movimiento : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, Rappel.puntoRappel, 13 * Time.deltaTime / Vector2.Distance(transform.position, Rappel.puntoRappel));
             //cont = 1;
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -112,18 +133,36 @@ public class Movimiento : MonoBehaviour
 
         if (collision.gameObject.layer == 8 || collision.gameObject.layer == 20)
         {
+            animator.SetBool("IsJumpingD", false);
+            print("choca");
             countJump = 0;
+            if (fall)
+            {
+                vidas--;
+                fall = false;
+                if (vidas < 1)
+                {
+                    Application.LoadLevel(Application.loadedLevel);
+                }
+            }
+            if(collision.transform.tag == "MovingPlat")
+            {
+                transform.parent = collision.transform;
+            }
         }
-        if (collision.gameObject.layer == 11 || collision.gameObject.layer == 12)
+        if ((collision.gameObject.layer == 11 || collision.gameObject.layer == 12 || collision.gameObject.layer == 19) && !invincible)
         {
             print("colision uwu");
             vidas -= 1;
             audioData.Play(0);
-
-            if (vidas == 0)
+            if (vidas < 1)
             {
                 Application.LoadLevel(Application.loadedLevel);
             }
+        }
+        if ((collision.gameObject.layer == 11 || collision.gameObject.layer == 12) && invincible)
+        {
+            Destroy(collision.gameObject);
         }
         if (collision.gameObject.layer == 14)
         {
@@ -146,6 +185,29 @@ public class Movimiento : MonoBehaviour
         {
             rb.gravityScale *= -1;
             transform.Rotate(180, 0, 0, Space.World);
+        }
+        if (collision.gameObject.layer == 21)
+        {
+            transform.position = (collision.gameObject.transform.GetChild(0).position);
+        }
+        if (collision.gameObject.layer == 22)
+        {
+            invincible = true;
+            goBeyond.SetActive(true);
+            StartCoroutine(invin);
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.layer == 24)
+        {
+            SceneManager.LoadScene("FinalBoss", LoadSceneMode.Single);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "MovingPlat")
+        {
+            transform.parent = null;
         }
     }
 
@@ -280,6 +342,29 @@ public class Movimiento : MonoBehaviour
 
     }
 
+    IEnumerator ganar()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(4.0f);
+            if (ganaste)
+            {
+                SceneManager.LoadScene("Ganaste", LoadSceneMode.Single);
+            }
+        }
+    }
+
+    IEnumerator fallDamage()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            if(Mathf.Abs(rb.velocity.y) > 13 && !fall)
+            {
+                fall = true;
+            }
+        }
+    }
     IEnumerator returnToNormal() 
    { 
        yield return new WaitForSeconds(10.0f); 
@@ -304,6 +389,13 @@ public class Movimiento : MonoBehaviour
                 //cont = 0;
             }
         }
+    }
+    IEnumerator invincibility()
+    {
+            yield return new WaitForSeconds(10.0f);
+            invincible = false;
+            goBeyond.SetActive(false);
+        
     }
 
 }
