@@ -114,9 +114,14 @@ public class Boss : MonoBehaviour {
     {
         while (true)
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.1f);
             if(actual == attack)
             {
+                yield return new WaitForSeconds(1.0f);
+                Instantiate<GameObject>(fire, bossIns.transform.position, bossIns.transform.rotation);
+            }
+            else if(actual == agressive){
+                yield return new WaitForSeconds(0.2f);
                 Instantiate<GameObject>(fire, bossIns.transform.position, bossIns.transform.rotation);
             }
         }
