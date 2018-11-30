@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{EA2095EB-0D0D-B288-1C88-AE53EDC62475}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Boss.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MenuPrincipal.cs">
     <Files>
-      <File FileName="Assets/Movimiento.cs" Line="113" Column="80" />
+      <File FileName="Assets/Movimiento.cs" Line="113" Column="10" />
       <File FileName="Assets/Rappel.cs" Line="38" Column="35" />
-      <File FileName="Assets/Boss.cs" Line="123" Column="42" />
-      <File FileName="Assets/MenuPrincipal.cs" Line="21" Column="13" />
+      <File FileName="Assets/Boss.cs" Line="123" Column="40" />
+      <File FileName="Assets/MenuPrincipal.cs" Line="34" Column="9" />
       <File FileName="Assets/Loading.cs" Line="21" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
